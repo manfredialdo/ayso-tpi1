@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>pagina no existe</title>
+</head>
+<body>
+  <h1>Formulario inseguro.. proba tus jacks!!!</h1>
+  <form onsubmit="return mostrarResultado()">
+    <input type="text" id="inputBusqueda" placeholder="Escribe algo">
+    <input type="submit" value="Buscar">
+  </form>
+
+  <h2>Resultado:</h2>
+  <div id="resultado"></div>
+
+  <script>
+    function mostrarResultado() {
+      var valor = document.getElementById("inputBusqueda").value;
+      document.getElementById("resultado").innerHTML = valor; //  vulnerable
+      return False; // evita el envío real del formulario
+    }
+  </script>
+</body>
+</html>
